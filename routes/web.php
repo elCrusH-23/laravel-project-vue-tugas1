@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\JurusanController;
 use App\Http\Controllers\DosenController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\DaftarjurusanController;
+use App\Http\Controllers\DaftardosenController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,5 +52,34 @@ Route::get('get-dosen/{id}',[DosenController::class,'get_detail']);
 
 Route::delete('hapus-dosen/{id}',[DosenController::class,'hapus_dosen']);
 
+Route::get('get-master-product-paging', [ProductController::class,'get_product_paging']);
+
+Route::get('list/product',[ProductController::class, 'index']);
+
+Route::post('store-product',[ProductController::class,'store_product']);
+
+Route::get('get-product/{id}',[ProductController::class,'get_detail']);
+
+Route::delete('hapus-product/{id}',[ProductController::class,'hapus_product']);
+
+Route::get('get-master-product-paging', [DaftarjurusanController::class,'get_product_paging']);
+
+Route::get('list/daftarjurusan',[DaftarjurusanController::class, 'index']);
+
+Route::post('store-daftarjurusan',[DaftarjurusanController::class,'store_daftarjurusan']);
+
+Route::get('get-daftarjurusan/{id}',[DaftarjurusanController::class,'get_detail']);
+
+Route::delete('hapus-daftarjurusan/{id}',[DaftarjurusanController::class,'hapus_daftarjurusan']);
+
+Route::get('get-master-product-paging', [DaftardosenController::class,'get_product_paging']);
+
+Route::get('list/daftardosen',[DaftardosenController::class, 'index']);
+
+Route::post('store-daftardosen',[DaftardosenController::class,'store_daftardosen']);
+
+Route::get('get-daftardosen/{id}',[DaftardosenController::class,'get_detail']);
+
+Route::delete('hapus-daftardosen/{id}',[Daftardosen::class,'hapus_daftardosen']);
 
 
